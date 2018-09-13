@@ -106,7 +106,8 @@ export function deriveAddress(publicKey: string, params: DeriveAddressParams = {
 
   const encodedPublicKey = encodeNanoBase32(paddedPublicKeyBytes);
 
-  const checksum = blake2b(publicKeyBytes, null, 5).reverse();
+  const checksum = blake2b(publicKeyBytes, null, 5);
+  console.log(checksum);
 
   const encodedChecksum = encodeNanoBase32(checksum);
 
